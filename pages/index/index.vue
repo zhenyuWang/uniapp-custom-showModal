@@ -21,7 +21,17 @@
 		methods: {
 			testShowModal(){
 				uni.showModal({
-					title:'test  title-111',
+					title:'test  title 111',
+					content: 'test content',
+					onCancel(){
+						console.log('用户触发了 onCancel');
+					},
+					onConfirm(){
+						console.log('用户触发了 onConfirm');
+					}
+				})
+				uni.showModal({
+					title:'test  title 222',
 					content: 'test content',
 					onCancel(){
 						console.log('用户触发了 onCancel');

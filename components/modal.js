@@ -2,7 +2,6 @@ import {
   createApp,
 	reactive,
 	h,
-	nextTick
 } from 'vue'
 import Modal from './Modal.vue'
 
@@ -34,10 +33,7 @@ showModal.close = () => {
 	if (singletonOptions != null) {
 		const prevSingletonOptions = singletonOptions
 		singletonOptions = null
-
-		nextTick().then(() => {
-			prevSingletonOptions.show = false
-		})
+		prevSingletonOptions.show = false
 	}
 }
 
